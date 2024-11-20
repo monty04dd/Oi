@@ -5,7 +5,13 @@ from PIL import Image
 
 def main():
     loaded = joblib.load("pipeline_penguins.pkl")
-    st.title("""Ciao, tramite il modello di regressione
-'RandomForestRegressor' ho creato la webapp SCOPRI CHE PINGUINO SEI! """)
-    
-    
+    st.markdown("""## Ciao, tramite il modello di regressione 'RandomForestRegressor' ho creato la webapp:""")
+    st.markdown("# SCOPRI CHE PINGUINO SEI!")
+
+
+
+
+
+
+if __name__ == "__main__":
+    main()
