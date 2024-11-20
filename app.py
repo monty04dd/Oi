@@ -5,7 +5,8 @@ def somma(l1:float, l2:float):
     return a
 
 def main():
-    st.text("Ciao questo front-end funiona")
+    st.text("Ciao questo front-end funziona")
+    #st.title('Luchino')
     # slider
     num1 = st.slider("inserisci lato1 rettangolo", 0, 100, 2)
     num2 = st.slider("inserisci lato2 rettangolo", 0, 100, 3)
