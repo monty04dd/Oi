@@ -47,8 +47,12 @@ sul dataset Titanic con un modello di random forest classifier""")
     # dict_res = {0:"morto male", 1:"femmina"}
 
     # predict = dict_res[predict]
+
+    # URL immagine "vivo":
+    url = 
+
     st.write(f"il/la passeggero/a che hai scielto è: : {predict}")
-    st.image("https://www.quotidiano.net/magazine/enrico-tavernini-morto-a-57-anni-addio-al-regista-di-riva-del-garda-fipenqtl", caption="Questa è la mia immagine", use_column_width=True)
+    st.image("https://www.quotidiano.net/magazine/enrico-tavernini-morto-a-57-anni-addio-al-regista-di-riva-del-garda-fipenqtl.png", caption="Questa è la mia immagine", use_column_width=True)
 
 if __name__ == "__main__":
     main()
