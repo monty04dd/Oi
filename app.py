@@ -11,7 +11,7 @@ def main():
     st.text("""questa applicazione web permette id fare inferenza 
 sul dataset cars con un modello ridge""")
     # slider
-    kms_driven = st.slider("quanti km ha la tua macchina?", 0, 100, 0)
+    kms_driven = st.slider("quanti km ha la tua macchina?", 0, 1000000, 0)
     old = st.slider("quanti anni ha la tua macchina", 0, 100, 0)
     brand = st.selectbox('che brand è la tua macchina?',('Hyundai', 'Mahindra', 'Ford', 'Maruti', 'Skoda', 'Audi', 'Toyota',
        'Renault', 'Honda', 'Datsun', 'Mitsubishi', 'Tata', 'Volkswagen',
@@ -28,7 +28,7 @@ sul dataset cars con un modello ridge""")
 
     predict = loaded.predict(inferenza)
     
-    st.write(f"la somma è: {predict}")
+    st.write(f"il prezzo di vendita della tua macchina è: {round(predict,2)}")
 
 if __name__ == "__main__":
     main()
