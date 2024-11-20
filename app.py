@@ -6,16 +6,31 @@ def somma(l1:float, l2:float):
     return a
 
 def main():
+    loaded = joblib.load("pipe_ridge_cars.pkl")
     st.title("Inferenza per cars dataset")
     st.text("""questa applicazione web permette id fare inferenza 
 sul dataset cars con un modello ridge""")
     # slider
-    num1 = st.slider("inserisci lato1 rettangolo", 0, 100, 2)
-    num2 = st.slider("inserisci lato2 rettangolo", 0, 100, 3)
-    option = st.selectbox('How would you like to be contacted?',('Email', 'Home phone', 'Mobile phone'))
-    r = somma(num1, num2)
+    kms_driven = st.slider("quanti km ha la tua macchina?", 0, 100, 0)
+    old = st.slider("quanti anni ha la tua macchina", 0, 100, 0)
+    brand = st.selectbox('che brand è la tua macchina?',('Hyundai', 'Mahindra', 'Ford', 'Maruti', 'Skoda', 'Audi', 'Toyota',
+       'Renault', 'Honda', 'Datsun', 'Mitsubishi', 'Tata', 'Volkswagen',
+       'Chevrolet', 'Mini', 'BMW', 'Nissan', 'Hindustan', 'Fiat', 'Force',
+       'Mercedes', 'Jeep', 'Volvo'), key="brand")
+    fuel_type = st.selectbox('che carburante usa la tua macchina?',('Petrol', 'Diesel', 'LPG'), key="carburante")
+    
+    inferenza = pd.DataFrame({
+        "kms_driven" : [kms_driven],
+        "old" : [old],
+        "brand" : [brand],
+        "fuel_type" : [fuel_type]
+    })
 
-    st.write(f"la somma è: {r}")
+    predict = loaded.predict(inferenza)
+    
+    st.write(f"la somma è: {predict}")
 
 if __name__ == "__main__":
     main()
+
+
