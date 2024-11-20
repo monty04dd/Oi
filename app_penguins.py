@@ -15,7 +15,7 @@ def main():
     flipper_length_mm = st.slider("inserisci la lunghezza delle ali", 0, 232, 0)
     body_mass_g = st.slider("inserisci il peso in grammi", 0, 6300, 0)
     sex = st.selectbox("di che sesso è?", ("maschio","femmina"), key="sex")
-    island = st.selectbox("di che sesso è?", ("Torgersen","Biscoe","Dream"), key="island")
+    island = st.selectbox("da che isola proviene?", ("Torgersen","Biscoe","Dream"), key="island")
 
     if sex == "maschio":
         sex = "male"
@@ -24,7 +24,7 @@ def main():
 
     
     data = pd.DataFrame({
-        "bill_length_mm":bill_length_mm,
+        "bill_length_mm":[bill_length_mm],
         "bill_depth_mm":bill_depth_mm,
         "flipper_length_mm":flipper_length_mm,
         "body_mass_g":body_mass_g,
