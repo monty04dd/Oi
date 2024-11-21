@@ -5,7 +5,7 @@ from PIL import Image
 
 def main():
     loaded = joblib.load("pipeline_penguins.pkl")
-    st.text("""### tramite il modello RandomForestRegressoior ho creato la webapp""")
+    st.text("""Tramite il modello RandomForestRegressoior ho creato la webapp""")
     st.markdown("# CHE PINGUINO SEI?😎")
 
 
@@ -25,17 +25,22 @@ def main():
     
     data = pd.DataFrame({
         "bill_length_mm":[bill_length_mm],
-        "bill_depth_mm":bill_depth_mm,
-        "flipper_length_mm":flipper_length_mm,
-        "body_mass_g":body_mass_g,
-        "sex":sex,
-        "island":island,
+        "bill_depth_mm":[bill_depth_mm],
+        "flipper_length_mm":[flipper_length_mm],
+        "body_mass_g":[body_mass_g],
+        "sex":[sex],
+        "island":[island],
     })
     
     predict = loaded.predict(data)
 
-    st.header(predict)
-    
+    st.text(f"se tu fossi un pinguino saresti: {predict[0]}")
+
+    immagine_pinguino_adelia = Image.open("immagine_pinguino_adelia.jpg")
+    immagine_pinguino_gentoo = Image.open("immagine_pinguino_gentoo.jpg")
+    immagine_pinguino_chinstrap = Image.open("immagine_pinguino_chinstrap.webp")
+    st.image(immagine_pinguino_adelia, use_column_width=True)
+
 
 if __name__ == "__main__":
     main()
