@@ -120,6 +120,7 @@ def grafici():
 
     # grafico del peso 
     st.markdown("<h1 style='text-align: center; color: white;'>Grafico Perso del Pinguino</h1>", unsafe_allow_html=True)
+    st.image(grafico_bodymass, use_column_width=True)
     st.markdown(
     """
     <h6>
