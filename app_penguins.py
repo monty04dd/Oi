@@ -57,8 +57,7 @@ def grafici():
     grafico_bodymass = Image.open("grafico_bodymass.png")
     grafico_bill_isole = Image.open("grafico_bill_isole.png")
     
-    st.markdown("<h1 style='text-align: center; color: white;'>GRAFICI E SPIEGAZIONI</h1>", unsafe_allow_html=True)
-    st.markdown("### qui sotto sono riportati i grafici che aiutano a spiegare come il modello discrimina le 3 classi di pinguini in base alle variabili date")
+    st.markdown("<h1 style='text-align: center; color: white;'> <b> E.D.A. </b> </h1>", unsafe_allow_html=True)
 
     # grafico isole
     st.markdown("<h2 style= 'text-align: center; color:white;'>Grafico Isole</h2>", unsafe_allow_html=True)
@@ -67,14 +66,21 @@ def grafici():
     st.markdown("###### - nell'isola Torgersen sono presenti solo pinguini di razza Adelie")
     st.markdown("###### - nell'isola Biscoe sono presenti in grande quantità i pinguini di razza Gentoo e pinguini Adelie in piccole quantità")
     st.markdown("###### - nell'isola Dream sono presenti pinguini di razza Chinstrap e Adelie in quantità simili, leggermente prevalente la razza Chinstrap")
+
+    st.markdown("""<h2><br><h2>""", unsafe_allow_html=True)
     
+    # grafico becco isole
+    st.markdown("<h2 style='text-align: centre; color:white;'>Grafico Isole-Becco-Sesso </h2>", unsafe_allow_html=True)
+    st.image(grafico_bill_isole, use_column_width=True)
+    st.markdown("""<h5>Notiamo che nelle isole dove sono presenti più razze di pinguini (Biscoe e Dream), si può discriminare la razza a seconda della lunghezza del becco<br>
+                - nell'isola Dream, per quanto riguarda i maschi, possiamo dire con certezza che se ho un becco di lunghezza inferiore a 46mm appartiene alla razza Adelie, invece per le femmine il distacco non è così netto, anche se solitamete becchi più lunghi appartengono alla specie Chinstrap<br>
+                - nell'isola Biscoe invece, il distacco non è così netto, quindi anche qui becchi piu corti appartengono alla specie Adelie e becchi più lunghi alla specie Gentoo ma non ho un distacco netto </h5>""", unsafe_allow_html=True)
 
 
-
-    st.markdown("### Modello usato:")
-    st.text("- RandomForestRegressor")
-    st.markdown("### Dataset:")
-    st.text("Il dataset utilizzato proviene dal Palmer Penguins dataset.")
+    # st.markdown("### Modello usato:")
+    # st.text("- RandomForestRegressor")
+    # st.markdown("### Dataset:")
+    # st.text("Il dataset utilizzato proviene dal Palmer Penguins dataset.")
 
 # Funzione principale per la navigazione
 def main():
