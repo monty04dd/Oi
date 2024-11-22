@@ -70,11 +70,12 @@ def grafici():
     st.markdown("""<h2><br><h2>""", unsafe_allow_html=True)
     
     # grafico becco isole
-    st.markdown("<h2 style='text-align: centre; color:white;'>Grafico Isole-Becco-Sesso </h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: centre; color:white;'>Grafico Isole-Becco-Peso-Sesso </h2>", unsafe_allow_html=True)
     st.image(grafico_bill_isole, use_column_width=True)
-    st.markdown("""<h5>Notiamo che nelle isole dove sono presenti più razze di pinguini (Biscoe e Dream), si può discriminare la razza a seconda della lunghezza del becco<br>
+    st.markdown("""<h6>Notiamo che nelle isole dove sono presenti più razze di pinguini (Biscoe e Dream), si può discriminare la razza a seconda della lunghezza del becco<br>
                 - nell'isola Dream, per quanto riguarda i maschi, possiamo dire con certezza che se ho un becco di lunghezza inferiore a 46mm appartiene alla razza Adelie, invece per le femmine il distacco non è così netto, anche se solitamete becchi più lunghi appartengono alla specie Chinstrap<br>
-                - nell'isola Biscoe invece, il distacco non è così netto, quindi anche qui becchi piu corti appartengono alla specie Adelie e becchi più lunghi alla specie Gentoo ma non ho un distacco netto </h5>""", unsafe_allow_html=True)
+                - nell'isola Biscoe invece, il distacco non è così netto, quindi anche qui becchi piu corti appartengono alla specie Adelie e becchi più lunghi alla specie Gentoo ma non ho un distacco netto <br>
+                - per quanto riguarda il peso invece, per l'isola Dream non è un fattore per determinare la razza del pinguino, invece nell'isola Biscoe notiamo che pesi maggiori (sia nei maschi che nelle femmine) appartengono alla razza Gentoo  </h6>""", unsafe_allow_html=True)
 
 
     # st.markdown("### Modello usato:")
