@@ -57,10 +57,11 @@ def grafici():
     grafico_bodymass = Image.open("grafico_bodymass.png")
     grafico_bill_isole = Image.open("grafico_bill_isole.png")
     
-    st.markdown("<h1 style='text-align: center; color: grey;'>GRAFICI E SPIEGAZIONI</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: white;'>GRAFICI E SPIEGAZIONI</h1>", unsafe_allow_html=True)
     st.markdown("### qui sotto sono riportati i grafici che aiutano a spiegare come il modello discrimina le 3 classi di pinguini in base alle variabili date")
 
     # grafico isole
+    st.markdown("<h2 style= 'text-align: center; color:white;'>Grafico Isole</h2>", unsafe_allow_html=True)
     st.image(grafico_isole, use_column_width=True)
     st.markdown("###### da questo grafico possiamo notare che:") 
     st.markdown("###### - nell'isola Torgersen sono presenti solo pinguini di razza Adelie")
