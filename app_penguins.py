@@ -5,8 +5,8 @@ from PIL import Image
 
 # Funzione per la predizione del pinguino
 def predizione_pinguino():
-    st.markdown("# CHE PINGUINO SEI? 😎")
     st.text("Tramite il modello RandomForestRegressor ho creato la webapp")
+    st.markdown("# CHE PINGUINO SEI? 😎")
 
     # Carica il modello
     loaded = joblib.load("pipeline_penguins.pkl")
@@ -19,7 +19,7 @@ def predizione_pinguino():
     sex = st.selectbox("Di che sesso è?", ("maschio", "femmina"))
     island = st.selectbox("Da che isola proviene?", ("Torgersen", "Biscoe", "Dream"))
 
-    # Conversione sesso
+    # Conversione sesso 
     sex = "male" if sex == "maschio" else "female"
 
     # Crea il DataFrame
@@ -56,17 +56,20 @@ def grafici():
     grafico_bill_length = Image.open("grafico_bill_length.png")
     grafico_bodymass = Image.open("grafico_bodymass.png")
     grafico_bill_isole = Image.open("grafico_bill_isole.png")
- 
-    st.markdown("# GRAFICI E SPIEGAZIONI")
+    
+    st.markdown("<h1 style='text-align: center; color: grey;'>GRAFICI E SPIEGAZIONI</h1>", unsafe_allow_html=True)
     st.markdown("### qui sotto sono riportati i grafici che aiutano a spiegare come il modello discrimina le 3 classi di pinguini in base alle variabili date")
 
     # grafico isole
     st.image(grafico_isole, use_column_width=True)
-    st.markdown("""#### da questo grafico possiamo notare che: 
-    markdown("- nell'isola Torgersen sono presenti solo pinguini di razza Adelie
-    #### - nell'isola Biscoe sono presenti in grande quantità i pinguini di razza Gentoo e pinguini Adelie in piccole quantità")
-    "#### - nell'isola Dream sono presenti pinguini di razza Chinstrap e Adelie in quantità simili, leggermente prevalente la razza Chinstrap")
+    st.markdown("###### da questo grafico possiamo notare che:") 
+    st.markdown("###### - nell'isola Torgersen sono presenti solo pinguini di razza Adelie")
+    st.markdown("###### - nell'isola Biscoe sono presenti in grande quantità i pinguini di razza Gentoo e pinguini Adelie in piccole quantità")
+    st.markdown("###### - nell'isola Dream sono presenti pinguini di razza Chinstrap e Adelie in quantità simili, leggermente prevalente la razza Chinstrap")
     
+
+
+
     st.markdown("### Modello usato:")
     st.text("- RandomForestRegressor")
     st.markdown("### Dataset:")
