@@ -6,7 +6,7 @@ def somma(l1:float, l2:float):
     return a
 
 def main():
-    loaded = joblib.load("pipe_ridge_cars.pkl")
+    loaded = joblib.load("pag/pkl/pipe_ridge_cars.pkl")
     st.title("Inferenza per cars dataset")
     st.text("""questa applicazione web permette id fare inferenza 
 sul dataset cars con un modello ridge""")
@@ -28,7 +28,7 @@ sul dataset cars con un modello ridge""")
 
     predict = loaded.predict(inferenza)
     
-    st.write(f"il prezzo di vendita della tua macchina è: {round(predict,2)}")
+    st.write(f"il prezzo di vendita della tua macchina è: {round(predict[0],2)}")
 
 if __name__ == "__main__":
     main()
