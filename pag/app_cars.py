@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import pandas as pd
+
 def somma(l1:float, l2:float):
     a = l1 + l2
     return a

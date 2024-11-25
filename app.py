@@ -17,7 +17,7 @@ def get_pages():
 
         BLACKLIST_FILES = ['__init__', 'test']  # aggiungi qui i file da escludere    
         # page_order = []
-        page_order = ["app_penguins", "app_cars", "app_titanic"]
+        page_order = ["app_penguins", "app_cars", "app_titanic", "app_dataupload"]
 
         files = [f[:-3] for f in os.listdir('pag') if f.endswith('.py') and f[:-3] not in BLACKLIST_FILES]
         files.sort(key=lambda x: page_order.index(x) if x in page_order else len(page_order))
@@ -25,12 +25,13 @@ def get_pages():
         icon_mapping = {
                 "app_penguins" : "pag/img/penguin_logo.png",    
                 "app_cars" : "pag/img/car.png", 
-                "app_titanic" : "pag/img/boat.png"
+                "app_titanic" : "pag/img/boat.png",
+                "app_dataupload" : "pag/img/boat.png"
         }
 
         for file in files:
                 page_name = file.capitalize()
-                pages.append(page_name)
+                pages.append(page_name.replace("_", " "))
                 icons.append(icon_mapping.get(file, "bi-file"))
                 module = importlib.import_module(f"pag.{file}")
                 modules.append(module)
@@ -44,6 +45,7 @@ class MultiApp:
                 self.apps = []
 
         def add_app(self, title, funcion):
+                title = title.replace("_", " ")
                 self.apps.append({
                         "tile" : title,
                         "function" : funcion
