@@ -2,6 +2,7 @@ import streamlit as st
 import joblib
 import pandas as pd
 from PIL import Image
+from streamlit_option_menu import option_menu
 
 # Funzione per la predizione del pinguino
 def predizione_pinguino():
@@ -84,7 +85,7 @@ def grafici():
     )
 
     
-    st.markdown("<h1 style='text-align: center; color: white;'> <b> E.D.A. </b> </h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: white;'> <b> E.D.A.</b> </h1>", unsafe_allow_html=True)
 
     # grafico isole
     st.markdown("<h2 style= 'text-align: center; color:white;'>Grafico Isole</h2>", unsafe_allow_html=True)
