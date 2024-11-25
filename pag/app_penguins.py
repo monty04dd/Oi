@@ -4,13 +4,14 @@ import pandas as pd
 from PIL import Image
 from streamlit_option_menu import option_menu
 
+
 # Funzione per la predizione del pinguino
 def predizione_pinguino():
     st.text("Tramite il modello RandomForestRegressor ho creato la webapp")
     st.markdown("# CHE PINGUINO SEI? 😎")
 
     # Carica il modello
-    loaded = joblib.load("pipeline_penguins.pkl")
+    loaded = joblib.load("pkl/pipeline_penguins.pkl")
 
     # Input dell'utente
     bill_length_mm = st.number_input("Inserisci la lunghezza del becco", value=0.0)
@@ -39,9 +40,9 @@ def predizione_pinguino():
     st.text(f"Se tu fossi un pinguino saresti: {predict[0]}")
 
     # Mostra immagine in base al risultato
-    immagine_pinguino_adelia = Image.open("immagine_pinguino_adelia.jpg")
-    immagine_pinguino_gentoo = Image.open("immagine_pinguino_gentoo.jpeg")
-    immagine_pinguino_chinstrap = Image.open("immagine_pinguino_chinstrap.webp")
+    immagine_pinguino_adelia = Image.open("img/immagine_pinguino_adelia.jpg")
+    immagine_pinguino_gentoo = Image.open("img/immagine_pinguino_gentoo.jpeg")
+    immagine_pinguino_chinstrap = Image.open("img/immagine_pinguino_chinstrap.webp")
 
     if predict[0] == "Adelie":
         st.image(immagine_pinguino_adelia, use_column_width=True)
@@ -53,10 +54,10 @@ def predizione_pinguino():
 # Funzione per la pagina "Informazioni"
 def grafici():
 
-    grafico_isole = Image.open("grafico_isole.png")
-    grafico_bill_length = Image.open("grafico_bill_length.png")
-    grafico_bodymass = Image.open("grafico_bodymass.png")
-    grafico_bill_isole = Image.open("grafico_bill_isole.png")
+    grafico_isole = Image.open("img/grafico_isole.png")
+    grafico_bill_length = Image.open("img/grafico_bill_length.png")
+    grafico_bodymass = Image.open("img/grafico_bodymass.png")
+    grafico_bill_isole = Image.open("img/grafico_bill_isole.png")
 
 
     # regole per l'indentazione all'interno dei futuri elenchi indipendenti 
